@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry - Prudiey Nails</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <button id="menu-btn">Menu</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="enquiry.html">Enquiry</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="enquiry-wrapper">
+            <h2>Tell us what you're after & Book your appointment</h2>
+            <p class="form-intro">Fill in the form below with your preferred service and date. We reply to every enquiry
+                 within one business day to confirm a time.</p>
+
+            <!-- Booking Enquiry Form -->
+            <form class="enquiry-form" id="booking-form">
+                <div class="form-group">
+                    <label for="full-name">Full name</label>
+                    <input type="text" id="full-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service you're interested in</label>
+                    <select id="service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="classic-mani">Classic manicure (R220)</option>
+                        <option value="gel-mani">Gel manicure (R320)</option>
+                        <option value="acrylic-set">Acrylic full set (R480)</option>
+                        <option value="acrylic-infill">Acrylic infill (R280)</option>
+                        <option value="classic-pedi">Classic pedicure (R280)</option>
+                        <option value="spa-pedi">Spa pedicure (R380)</option>
+                        <option value="gel-pedi">Gel pedicure (R420)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Preferred date</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="technician">Preferred technician (optional)</label>
+                    <select id="technician">
+                        <option value="none">No preference</option>
+                        <option value="prudiey">Prudiey</option>
+                        <option value="zoe">Anyone avaliable</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Anything else we should know?(reference photos, allergies, timing)</label>
+                    <textarea id="notes" rows="4" placeholder="Reference photos, allergies, or timing constraints"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send booking request</button>
+            </form>
+
+            <p class="form-notice">This form doesn't send anywhere yet — it's a front-end placeholder ready to connect 
+                to a booking backend or WhatsApp/email service.</p>
+
+            <!-- Bottom Reach Us Block -->
+            <div class="direct-contact-section">
+                <h3>Prefer to talk it through?</h3>
+                <h2>Reach us directly instead</h2>
+                <a href="contact.html" class="contact-link">View contact details</a>
+                <p class="brand-signature">Prudiey Nails</p>
+                <p class="studio-description">A boutique nail studio focused on precise shaping, considered colour, 
+                    and finishes that last.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 My Website. Prudiey Nails</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
