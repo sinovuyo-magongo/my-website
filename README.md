@@ -2,8 +2,8 @@
 
 ## Student Information
 - **Name:** Sinovuyo Magongo
-- **Student Number:** [Your Student Number]
-- **Course:** [Your Course Code / Class Name]
+- **Student Number:** [ST10481104]
+- **Course:** [WED Development/ WEDE5020]
 
 ---
 
