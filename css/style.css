@@ -399,3 +399,16 @@ footer {
     padding: 1.5rem;
   }
 }
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between; /* Aligns them in a neat row */
+    gap: 20px; /* Adds spacing between the images */
+}
+
+.image-gallery img {
+    width: 32%; /* Distributes them evenly across the screen */
+    height: 400px; /* Forces all three images to have the exact same height */
+    object-fit: cover; /* Crops the images cleanly without stretching or distortion */
+    border-radius: 8px; /* Optional: adds smooth rounded corners to match your UI */
+}
