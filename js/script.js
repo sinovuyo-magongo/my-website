@@ -43,6 +43,5 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Thanks for your message! This form doesn't send anywhere yet, but it's ready to be connected up.");
     });
   }
-  <script src="../js/script.js"></script>
 
 });
