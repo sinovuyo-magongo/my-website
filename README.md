@@ -56,10 +56,15 @@ This submission delivers the fundamental layout structure, containing:
 ### Part 1 Corrections
 - Fixed missing CSS link and script reference on index.html.
 - Standardised script.js path across all pages (was inconsistent, causing 404s on some pages).
-- Removed invalid stray <script> tag inside script.js that broke the file.
-- Fixed unclosed <div> in index.html (.recent-sets-section).
-- Fixed broken nested map markup and duplicate closing tag in contact.html.
-- Fixed dead "Book Now" links pointing to non-existent book.html; now point to enquiry.html.
+- Removed invalid stray `<script>` tag inside script.js that broke the file.
+- Fixed unclosed `<div>` in index.html (.recent-sets-section).
+- Fixed missing closing `<div>` for .testimonials-section in about.html, which was collapsing the layout of the follow-section and studio-invite-section below it.
+- Fixed broken nested map markup and duplicate closing `</iframe>` tag in contact.html; removed unrelated leftover map embed.
+- Fixed dead "Book Now" links pointing to non-existent book.html on index.html, about.html, and services.html; now point to enquiry.html.
+- Corrected mismatched image alt text on about.html to accurately describe the images shown.
+- Added wireframes for all five site pages (home, about, services, enquiry, contact) — previously missing from Part 1 submission.
+- Added inline citations and expanded research evidence across the Target Audience, Website Goals, Current Website Analysis, Design and User Experience, and Technical Requirements sections of the proposal.
+- Replaced vague, uncited entries in this README's References section with the full list of sources actually used in research (see References below).
 
 ### Part 2 Additions
 - Created external stylesheet (css/style.css) linked across all pages.
