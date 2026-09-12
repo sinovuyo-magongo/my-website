@@ -53,19 +53,6 @@ This submission delivers the fundamental layout structure, containing:
 
 ---
 
-## References
-- Code practices based on technical layout lessons supplied by course lecturers.
-- Map integrations sourced live using iframe templates from [Google Maps](https://google.com).
-- Built structural styles and layouts using standard responsive development methodologies.
-- LeadsuiteNow (2026) *Nail salon lead generation & client retention USA: 2026 guide*. Available at: https://leadsuitenow.com/blog/nail-salon-lead-generation-usa-2026 (Accessed: 12 September 2026).
-- MioSalon (2025) *Top benefits of online booking for salons to boost revenue*. Available at: https://blog.miosalon.com/surprising-benefits-of-online-booking-for-salons-when-done-right/ (Accessed: 5 August 2026).
-- Pagecloud (2024) *Top website goals to grow online and how to achieve them*. Available at: https://www.pagecloud.com/blog/website-goals-and-how-to-achieve-them (Accessed: 5 August 2026).
-- RegisterDomain.co.za (2026) *Domain registration in South Africa: costs and considerations*. Available at: https://www.registerdomain.co.za/blog/domain-registration-south-africa/ (Accessed: 5 August 2026).
-- Salon Booking System (2026) *Nail salon booking app: complete guide for 2026*. Available at: https://www.salonbookingsystem.com/salon-booking-system-blog/nail-salon-booking-app/ (Accessed: 12 September 2026).
-- Studio Mesa (2026) *Website goals for small business: setting measurable objectives that drive growth*. Available at: https://studiomesa.co/articles/website-goals-for-small-business-measurable-objectives/ (Accessed: 5 August 2026).
-- UXPin (2026) *Mobile-first design: a complete guide with examples and best practices*. Available at: https://www.uxpin.com/studio/blog/a-hands-on-guide-to-mobile-first-design/ (Accessed: 5 August 2026).
-- Zenoti (2026) *2026 nail salon trends every business owner should know*. Available at: https://www.zenoti.com/thecheckin/2026-nail-salon-trends (Accessed: 12 September 2026).
--
 ### Part 1 Corrections
 - Fixed missing CSS link and script reference on index.html.
 - Standardised script.js path across all pages (was inconsistent, causing 404s on some pages).
@@ -81,3 +68,17 @@ This submission delivers the fundamental layout structure, containing:
 - Added hover/focus/active states on buttons, nav links, and service items.
 - Added responsive breakpoints at 768px (tablet) and 480px (mobile), with mobile nav toggle.
 - Added wireframes for all five site pages (home, about, services, enquiry, contact) — previously missing from Part 1 submission.
+
+## References
+- Code practices based on technical layout lessons supplied by course lecturers.
+- Map integrations sourced live using iframe templates from [Google Maps](https://google.com).
+- Built structural styles and layouts using standard responsive development methodologies.
+- LeadsuiteNow (2026) *Nail salon lead generation & client retention USA: 2026 guide*. Available at: https://leadsuitenow.com/blog/nail-salon-lead-generation-usa-2026 (Accessed: 12 September 2026).
+- MioSalon (2025) *Top benefits of online booking for salons to boost revenue*. Available at: https://blog.miosalon.com/surprising-benefits-of-online-booking-for-salons-when-done-right/ (Accessed: 5 August 2026).
+- Pagecloud (2024) *Top website goals to grow online and how to achieve them*. Available at: https://www.pagecloud.com/blog/website-goals-and-how-to-achieve-them (Accessed: 5 August 2026).
+- RegisterDomain.co.za (2026) *Domain registration in South Africa: costs and considerations*. Available at: https://www.registerdomain.co.za/blog/domain-registration-south-africa/ (Accessed: 5 August 2026).
+- Salon Booking System (2026) *Nail salon booking app: complete guide for 2026*. Available at: https://www.salonbookingsystem.com/salon-booking-system-blog/nail-salon-booking-app/ (Accessed: 12 September 2026).
+- Studio Mesa (2026) *Website goals for small business: setting measurable objectives that drive growth*. Available at: https://studiomesa.co/articles/website-goals-for-small-business-measurable-objectives/ (Accessed: 5 August 2026).
+- UXPin (2026) *Mobile-first design: a complete guide with examples and best practices*. Available at: https://www.uxpin.com/studio/blog/a-hands-on-guide-to-mobile-first-design/ (Accessed: 5 August 2026).
+- Zenoti (2026) *2026 nail salon trends every business owner should know*. Available at: https://www.zenoti.com/thecheckin/2026-nail-salon-trends (Accessed: 12 September 2026).
+-
