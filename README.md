@@ -72,3 +72,4 @@ This submission delivers the fundamental layout structure, containing:
 - Implemented Flexbox/Grid layouts for nav, galleries, service items, and contact details.
 - Added hover/focus/active states on buttons, nav links, and service items.
 - Added responsive breakpoints at 768px (tablet) and 480px (mobile), with mobile nav toggle.
+- Added wireframes for all five site pages (home, about, services, enquiry, contact) — previously missing from Part 1 submission.
