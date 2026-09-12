@@ -412,3 +412,22 @@ footer {
     object-fit: cover; /* Crops the images cleanly without stretching or distortion */
     border-radius: 8px; /* Optional: adds smooth rounded corners to match your UI */
 }
+
+/* force the image gallery grid to all neatly */
+.image-gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /*allowes images to stack neatyly on smaller mobile screens*/
+}
+
+/*forces all images/pictures to be the exact same size and crop cleanly*/
+.image-gallery img,
+.image-gallery picture img {
+  width: 100%;
+  max-width: 300px;  /*sets a uniform maximum width for each card*/
+  height: 400px; /* forces them all to be the exact same heaight */
+  object-fit: cover; /* magic tricks the images perfectly without stretching them*/
+  border-radius: 8px; /* Optional: gives them a nice clean rounded corner */
+}
