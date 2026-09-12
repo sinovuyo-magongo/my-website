@@ -73,6 +73,7 @@ This submission delivers the fundamental layout structure, containing:
 - Added hover/focus/active states on buttons, nav links, and service items.
 - Added responsive breakpoints at 768px (tablet) and 480px (mobile), with mobile nav toggle.
 - Added wireframes for all five site pages (home, about, services, enquiry, contact) — previously missing from Part 1 submission.
+- Removed a duplicate, non-responsive `.image-gallery` rule that was overriding the responsive grid layout on smaller screens.
 
 ## References
 - Code practices based on technical layout lessons supplied by course lecturers.
