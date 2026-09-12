@@ -2,8 +2,8 @@
 
 ## Student Information
 - **Name:** Sinovuyo Magongo
-- **Student Number:** [ST10481104]
-- **Course:** [WED Development/ WEDE5020]
+- **Student Number:** ST10481104
+- **Course:** WED Development/ WEDE5020
 
 ---
 
