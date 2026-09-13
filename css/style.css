@@ -270,6 +270,17 @@ nav {
   margin-bottom: 2rem;
 }
 
+.location-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.map-container {
+  flex: 1;
+  min-width: 280px;
+}
+
 .map-container iframe {
   width: 100%;
   height: 350px;
