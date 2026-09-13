@@ -75,6 +75,17 @@ This submission delivers the fundamental layout structure, containing:
 - Added wireframes for all five site pages (home, about, services, enquiry, contact) — previously missing from Part 1 submission.
 - Removed a duplicate, non-responsive `.image-gallery` rule that was overriding the responsive grid layout on smaller screens.
 
+## Responsive Design Evidence
+
+## Desktop View
+![Desktop layout](./images/desktop-view.png)
+
+## Tablet View
+![Tablet layout](./images/tablet-view.png)
+
+## Mobile View
+![Mobile layout](./images/mobile-view.png)
+
 ## References
 - Code practices based on technical layout lessons supplied by course lecturers.
 - Map integrations sourced live using iframe templates from [Google Maps](https://google.com).
