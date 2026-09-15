@@ -136,7 +136,6 @@ nav {
 }
 
 /* ---------- Image Galleries (grid layout) ---------- */
-.image-gallery,
 .three-image-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -144,11 +143,7 @@ nav {
   margin: 1.5rem 0;
 }
 
-.image-gallery img,
 .three-image-gallery img {
-  height: 400px; /* forces them all to be the exact same heaight */
-  object-fit: cover; /* magic tricks the images perfectly without stretching them*/
-  border-radius: 8px; /* Optional: gives them a nice clean rounded corner */
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
   object-fit: cover;
