@@ -75,6 +75,13 @@ This submission delivers the fundamental layout structure, containing:
 - Added wireframes for all five site pages (home, about, services, enquiry, contact) — previously missing from Part 1 submission.
 - Removed a duplicate, non-responsive `.image-gallery` rule that was overriding the responsive grid layout on smaller screens.
 
+### Part 3 Additions
+- Implemented dynamic form processing on enquiry.html: validates input, then displays 
+  a response showing the selected service's price and the requested date.
+- Implemented email compilation on contact.html: validates input, then builds a mailto: 
+  link addressed to hello@prudieynails.co.za with the submitted details pre-filled, 
+  allowing the user to review and send the email themselves.
+
 ## Responsive Design Evidence
 
 ## Desktop View
@@ -95,10 +102,3 @@ This submission delivers the fundamental layout structure, containing:
 - Studio Mesa (2026) *Website goals for small business: setting measurable objectives that drive growth*. Available at: https://studiomesa.co/articles/website-goals-for-small-business-measurable-objectives/ (Accessed: 5 August 2026).
 - UXPin (2026) *Mobile-first design: a complete guide with examples and best practices*. Available at: https://www.uxpin.com/studio/blog/a-hands-on-guide-to-mobile-first-design/ (Accessed: 5 August 2026).
 - Zenoti (2026) *2026 nail salon trends every business owner should know*. Available at: https://www.zenoti.com/thecheckin/2026-nail-salon-trends (Accessed: 12 September 2026).
-
-### Part 3 Additions
-- Implemented dynamic form processing on enquiry.html: validates input, then displays 
-  a response showing the selected service's price and the requested date.
-- Implemented email compilation on contact.html: validates input, then builds a mailto: 
-  link addressed to hello@prudieynails.co.za with the submitted details pre-filled, 
-  allowing the user to review and send the email themselves.
