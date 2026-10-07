@@ -427,3 +427,20 @@ footer {
   object-fit: cover; /* magic tricks the images perfectly without stretching them*/
   border-radius: 8px; /* Optional: gives them a nice clean rounded corner */
 }
+
+.booking-response {
+  background-color: var(--white);
+  border-left: 4px solid var(--rose-gold);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.booking-response p {
+  margin-bottom: 0.5rem;
+}
+
+.booking-response p:last-child {
+  margin-bottom: 0;
+}
