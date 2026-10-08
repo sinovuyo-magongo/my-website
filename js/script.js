@@ -24,6 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
       navLinks.classList.toggle("open");
     });
   }
+  
+    // ---------- Prevent past dates on enquiry form ----------
+  const dateInput = document.getElementById("date");
+  if (dateInput) {
+    dateInput.min = new Date().toISOString().split("T")[0];
+  }
 
   // ---------- Mark current page's nav link as active ----------
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
@@ -114,16 +120,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const name = document.getElementById("msg-name").value.trim();
-      const email = document.getElementById("msg-email").value.trim();
-      const message = document.getElementById("msg-text").value.trim();
+const email = document.getElementById("msg-email").value.trim();
+const type = document.getElementById("msg-type").value;
+const message = document.getElementById("msg-text").value.trim();
 
-      const recipient = "hello@prudieynails.co.za";
-      const subject = encodeURIComponent("New website enquiry from " + name);
-      const body = encodeURIComponent(
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n\n" +
-        "Message:\n" + message
-      );
+const recipient = "hello@prudieynails.co.za";
+const subject = encodeURIComponent(type + " - website enquiry from " + name);
+const body = encodeURIComponent(
+  "Name: " + name + "\n" +
+  "Email: " + email + "\n" +
+  "Type of message: " + type + "\n\n" +
+  "Message:\n" + message
+);
 
       const mailtoLink = "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
 
