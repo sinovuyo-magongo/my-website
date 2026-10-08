@@ -81,6 +81,7 @@ This submission delivers the fundamental layout structure, containing:
 - Implemented email compilation on contact.html: validates input, then builds a mailto: 
   link addressed to hello@prudieynails.co.za with the submitted details pre-filled, 
   allowing the user to review and send the email themselves.
+  - Added an availability check to the enquiry form response: the requested date is compared against the studio's opening hours (closed Sundays and Mondays) and the user is shown a relevant availability note.
 
 ## Responsive Design Evidence
 
