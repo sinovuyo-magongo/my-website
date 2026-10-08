@@ -1,9 +1,10 @@
-# Website Project: Prudie Nails
+# Website Project: Prudiey Nails
 
 ## Student Information
 - **Name:** Sinovuyo Magongo
 - **Student Number:** ST10481104
 - **Course:** WED Development/ WEDE5020
+-**Live Link:**https://sinovuyo-magongo.github.io/my-website/
 
 ---
 
@@ -74,6 +75,7 @@ This submission delivers the fundamental layout structure, containing:
 - Added responsive breakpoints at 768px (tablet) and 480px (mobile), with mobile nav toggle.
 - Added wireframes for all five site pages (home, about, services, enquiry, contact) — previously missing from Part 1 submission.
 - Removed a duplicate, non-responsive `.image-gallery` rule that was overriding the responsive grid layout on smaller screens.
+- Added a "Type of message" dropdown to the contact form; the selected type is included in the email subject and body.
 
 ### Part 3 Additions
 - Implemented dynamic form processing on enquiry.html: validates input, then displays 
