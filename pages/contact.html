@@ -94,6 +94,18 @@
                     </div>
 
                     <div class="form-group">
+    <label for="msg-type">Type of message</label>
+    <select id="msg-type" required>
+        <option value="" disabled selected>Select a message type</option>
+        <option value="General question">General question</option>
+        <option value="Change or cancel an appointment">Change or cancel an appointment</option>
+        <option value="Pricing or services">Pricing or services</option>
+        <option value="Feedback or compliment">Feedback or compliment</option>
+        <option value="Collaboration or other">Collaboration or other</option>
+    </select>
+</div>
+
+                    <div class="form-group">
                         <label for="msg-text">Message</label>
                         <textarea id="msg-text" rows="5" placeholder="Ask a question, or let us know what you're after" required></textarea>
                     </div>
