@@ -71,6 +71,13 @@ document.addEventListener("DOMContentLoaded", function () {
           day: "numeric",
         });
       }
+      
+      // Check the requested date against the studio's real opening hours (Sun & Mon closed)
+      const requestedDay = new Date(dateValue + "T00:00:00").getDay(); // 0 = Sunday, 1 = Monday
+      const isClosed = requestedDay === 0 || requestedDay === 1;
+      const availabilityNote = isClosed
+        ? "<p><strong>Note:</strong> the studio is closed on Sundays and Mondays — Prudiey will reach out to suggest the nearest available day.</p>"
+        : "<p>This falls on a regular studio day, so availability is likely — Prudiey will confirm your exact time slot by WhatsApp or email within one business day.</p>";
 
       // Technician preference, for a slightly more tailored response
       const technicianSelect = document.getElementById("technician");
@@ -79,12 +86,11 @@ document.addEventListener("DOMContentLoaded", function () {
           ? "whoever is available"
           : technicianSelect.options[technicianSelect.selectedIndex].text;
 
-      // Build and display the dynamic response
-      bookingResponse.innerHTML =
+        bookingResponse.innerHTML =
         "<p><strong>Thanks — here's a summary of your request:</strong></p>" +
         "<p><strong>" + serviceName + "</strong> costs <strong>" + servicePrice + "</strong>.</p>" +
         "<p>Requested date: <strong>" + formattedDate + "</strong>, with <strong>" + technicianText + "</strong>.</p>" +
-        "<p>Prudiey will confirm final availability for that date by WhatsApp or email within one business day.</p>";
+        availabilityNote;
 
       bookingResponse.hidden = false;
       bookingResponse.scrollIntoView({ behavior: "smooth", block: "center" });
