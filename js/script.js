@@ -40,6 +40,129 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ============================================================
+  // FORM VALIDATION — shared by both forms
+  // Checks every field with JavaScript and shows an error message
+  // under any field that is empty or wrong, instead of relying on
+  // the browser's default popup.
+  // ============================================================
+
+  // Message shown when a required field is left empty
+  const requiredMessages = {
+    "full-name": "Please enter your full name.",
+    "phone": "Please enter your phone number.",
+    "email": "Please enter your email address.",
+    "service": "Please choose a service.",
+    "date": "Please choose your preferred date.",
+    "msg-name": "Please enter your name.",
+    "msg-email": "Please enter your email address.",
+    "msg-type": "Please select a message type.",
+    "msg-text": "Please type your message."
+  };
+
+  // Returns an error message for a field, or "" if the field is fine
+  function getErrorMessage(field) {
+    const value = field.value.trim();
+
+    // 1. Required but empty
+    if (field.required && value === "") {
+      return requiredMessages[field.id] || "This field is required.";
+    }
+
+    // Optional and empty is fine (e.g. technician, notes)
+    if (value === "") {
+      return "";
+    }
+
+    // 2. Rules for specific fields
+    if (field.id === "full-name" || field.id === "msg-name") {
+      if (value.length < 2) {
+        return "Your name must be at least 2 characters long.";
+      }
+      if (!/^[A-Za-zÀ-ÿ' -]+$/.test(value)) {
+        return "Names can only contain letters, spaces, hyphens and apostrophes.";
+      }
+    }
+
+    if (field.id === "phone") {
+      // Remove spaces, dashes and brackets, then expect 0XXXXXXXXX or +27XXXXXXXXX
+      const digits = value.replace(/[\s\-()]/g, "");
+      if (!/^(\+27|0)\d{9}$/.test(digits)) {
+        return "Enter a valid South African number, e.g. 071 555 0182.";
+      }
+    }
+
+    if (field.id === "email" || field.id === "msg-email") {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        return "Enter a valid email address, e.g. name@example.com.";
+      }
+    }
+
+    if (field.id === "date" && field.validity.rangeUnderflow) {
+      return "Please choose today's date or a future date.";
+    }
+
+    if (field.id === "msg-text" && value.length < 10) {
+      return "Please write at least 10 characters so we can help you properly.";
+    }
+
+    return "";
+  }
+
+  // Puts an error message under a field
+  function showError(field, message) {
+    clearError(field);
+    const error = document.createElement("p");
+    error.className = "field-error";
+    error.id = field.id + "-error";
+    error.textContent = message;
+    field.setAttribute("aria-invalid", "true");
+    field.setAttribute("aria-describedby", error.id);
+    field.parentElement.appendChild(error);
+  }
+
+  // Removes a field's error message
+  function clearError(field) {
+    const existing = document.getElementById(field.id + "-error");
+    if (existing) {
+      existing.remove();
+    }
+    field.removeAttribute("aria-invalid");
+    field.removeAttribute("aria-describedby");
+  }
+
+  // Checks every field in a form. Returns true only if all are valid.
+  function validateForm(form) {
+    let firstInvalid = null;
+
+    form.querySelectorAll("input, select, textarea").forEach(function (field) {
+      const message = getErrorMessage(field);
+      if (message) {
+        showError(field, message);
+        if (!firstInvalid) {
+          firstInvalid = field;
+        }
+      } else {
+        clearError(field);
+      }
+    });
+
+    if (firstInvalid) {
+      firstInvalid.focus(); // jump the cursor to the first problem
+    }
+    return firstInvalid === null;
+  }
+
+  // Set up both forms: turn off the browser's own popups (we show our own)
+  // and remove a field's error as soon as the user starts fixing it.
+  document.querySelectorAll("#booking-form, .quick-form").forEach(function (form) {
+    form.noValidate = true;
+    form.querySelectorAll("input, select, textarea").forEach(function (field) {
+      field.addEventListener("input", function () { clearError(field); });
+      field.addEventListener("change", function () { clearError(field); });
+    });
+  });
+
+  // ============================================================
   // ENQUIRY FORM — enquiry.html
   // Shows the user a response about cost and availability.
   // ============================================================
@@ -50,9 +173,8 @@ document.addEventListener("DOMContentLoaded", function () {
     bookingForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Run native HTML validation (required fields, valid email/date, etc.)
-      if (!bookingForm.checkValidity()) {
-        bookingForm.reportValidity();
+      // Validate every field; error messages appear under any invalid field
+      if (!validateForm(bookingForm)) {
         return;
       }
 
@@ -114,8 +236,8 @@ document.addEventListener("DOMContentLoaded", function () {
     quickForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      if (!quickForm.checkValidity()) {
-        quickForm.reportValidity();
+      // Validate every field; error messages appear under any invalid field
+      if (!validateForm(quickForm)) {
         return;
       }
 
