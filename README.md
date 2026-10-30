@@ -86,6 +86,7 @@ This submission delivers the fundamental layout structure, containing:
 - Added an availability check to the enquiry form response: the requested date is compared against the studio's opening hours (closed Sundays and Mondays) and the user is shown a relevant availability note.
 - Added a gallery lightbox to index.html and about.html. Clicking a gallery image opens an enlarged copy in an overlay, built with JavaScript DOM manipulation (script.js) and styled with a CSS fade-in animation (style.css). It closes via the × button, a click outside the image, or the Escape key.
 - Replaced the browser's default validation popups on enquiry.html and contact.html with JavaScript validation (script.js). Each field is checked on submit (required fields, name format, South African phone number format, email format, past dates, minimum message length) and a specific error message is displayed under any invalid field, with the cursor moved to the first error. Messages clear as the user corrects the field. Error styling added in style.css.
+- Added AJAX submission to the enquiry form (script.js). After validation passes, the enquiry is sent in the background to a Formspree endpoint using `fetch` (no page reload). The button shows "Sending..." and is disabled while the request runs; on success the price and availability summary is shown with a confirmation, and on failure an error message with the studio's WhatsApp number is displayed instead.
 
 ## Responsive Design Evidence
 
