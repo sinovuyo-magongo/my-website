@@ -84,6 +84,7 @@ This submission delivers the fundamental layout structure, containing:
   link addressed to hello@prudieynails.co.za with the submitted details pre-filled, 
   allowing the user to review and send the email themselves.
 - Added an availability check to the enquiry form response: the requested date is compared against the studio's opening hours (closed Sundays and Mondays) and the user is shown a relevant availability note.
+- Added a gallery lightbox to index.html and about.html. Clicking a gallery image opens an enlarged copy in an overlay, built with JavaScript DOM manipulation (script.js) and styled with a CSS fade-in animation (style.css). It closes via the × button, a click outside the image, or the Escape key.
 
 ## Responsive Design Evidence
 
