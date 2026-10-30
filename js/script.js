@@ -578,4 +578,88 @@ const body = encodeURIComponent(
     }
   }
 
+    // ============================================================
+  // INTERACTIVE SERVICE-AREA MAP — contact.html
+  // Uses the Leaflet library with OpenStreetMap tiles. Circles show
+  // the general service areas only (no exact address, for privacy).
+  // ============================================================
+  const mapElement = document.getElementById("service-map");
+
+  if (mapElement && typeof L !== "undefined") {
+
+    const serviceAreas = [
+      { name: "Fichardt Park", lat: -29.1489, lng: 26.1592 },
+      { name: "Universitas",   lat: -29.1057, lng: 26.1848 }
+    ];
+
+    // Create the map. On phones, one-finger dragging is switched off so
+    // the page can still be scrolled when a finger lands on the map.
+    const map = L.map(mapElement, {
+      scrollWheelZoom: false,
+      dragging: !L.Browser.mobile
+    }).setView([-29.127, 26.172], 12);
+
+    // The map picture itself
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Draw one circle per service area, in the site's colours
+    const areaGroup = L.featureGroup();
+    const areaCircles = {};
+
+    serviceAreas.forEach(function (area) {
+      const circle = L.circle([area.lat, area.lng], {
+        radius: 1200,
+        color: "#b76e79",      // rose gold outline
+        fillColor: "#f7cad0",  // blush pink fill
+        fillOpacity: 0.5,
+        weight: 2
+      });
+      circle.bindPopup(
+        "<strong>" + area.name + "</strong><br>" +
+        "General service area. The exact address is shared once your booking is confirmed."
+      );
+      circle.addTo(areaGroup);
+      areaCircles[area.name] = circle;
+    });
+
+    areaGroup.addTo(map);
+    map.fitBounds(areaGroup.getBounds().pad(0.3));
+
+    // Buttons that fly the map to each area
+    const mapControls = document.createElement("div");
+    mapControls.className = "map-controls";
+
+    function addMapButton(label, action) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "submit-btn";
+      button.textContent = label;
+      button.addEventListener("click", action);
+      mapControls.appendChild(button);
+    }
+
+    addMapButton("Show both areas", function () {
+      map.closePopup();
+      map.flyToBounds(areaGroup.getBounds().pad(0.3));
+    });
+
+    serviceAreas.forEach(function (area) {
+      addMapButton(area.name, function () {
+        const circle = areaCircles[area.name];
+        map.flyToBounds(circle.getBounds().pad(0.4));
+        circle.openPopup();
+      });
+    });
+
+    mapElement.parentNode.insertBefore(mapControls, mapElement);
+
+  } else if (mapElement) {
+    // Leaflet did not load (for example, no internet): hide the empty box.
+    // The Google maps below the section still work as a fallback.
+    mapElement.hidden = true;
+  }
+
 });
