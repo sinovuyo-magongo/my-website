@@ -168,6 +168,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // ============================================================
   const bookingForm = document.getElementById("booking-form");
   const bookingResponse = document.getElementById("booking-response");
+  // Where the enquiry is sent. Replace YOUR_FORM_ID with your Formspree form ID.
+  const ENQUIRY_ENDPOINT = "https://formspree.io/f/xoeenkgk";
 
   if (bookingForm) {
     bookingForm.addEventListener("submit", function (e) {
@@ -214,14 +216,58 @@ document.addEventListener("DOMContentLoaded", function () {
           ? "whoever is available"
           : technicianSelect.options[technicianSelect.selectedIndex].text;
 
-        bookingResponse.innerHTML =
+              // The same summary as before, now shown once the request has been sent
+      const summaryHTML =
         "<p><strong>Thanks — here's a summary of your request:</strong></p>" +
         "<p><strong>" + serviceName + "</strong> costs <strong>" + servicePrice + "</strong>.</p>" +
         "<p>Requested date: <strong>" + formattedDate + "</strong>, with <strong>" + technicianText + "</strong>.</p>" +
         availabilityNote;
 
-      bookingResponse.hidden = false;
-      bookingResponse.scrollIntoView({ behavior: "smooth", block: "center" });
+      // The data that gets sent to the server
+      const enquiryData = {
+        _subject: "New booking enquiry: " + serviceName,
+        name: document.getElementById("full-name").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        service: serviceName + " (" + servicePrice + ")",
+        date: formattedDate,
+        technician: technicianText,
+        notes: document.getElementById("notes").value.trim() || "None"
+      };
+
+      // Show the user something is happening and stop double-clicks
+      const submitBtn = bookingForm.querySelector(".submit-btn");
+      const originalLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      // AJAX: send the data in the background, no page reload
+      fetch(ENQUIRY_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(enquiryData)
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Server responded with status " + response.status);
+          }
+          bookingResponse.innerHTML =
+            "<p><strong>Your request has been sent.</strong></p>" + summaryHTML;
+        })
+        .catch(function () {
+          bookingResponse.innerHTML =
+            "<p><strong>Sorry, your request could not be sent.</strong></p>" +
+            "<p>Please check your internet connection and try again, or message Prudiey on WhatsApp at +27 71 555 0182.</p>";
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+          bookingResponse.hidden = false;
+          bookingResponse.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
     });
   }
 
@@ -241,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      const name = document.getElementById("msg-name").value.trim();
+const name = document.getElementById("msg-name").value.trim();
 const email = document.getElementById("msg-email").value.trim();
 const type = document.getElementById("msg-type").value;
 const message = document.getElementById("msg-text").value.trim();
