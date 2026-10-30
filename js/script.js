@@ -562,5 +562,20 @@ const body = encodeURIComponent(
       }
     });
   }
+  // ----- Pre-select the service chosen on the Services page -----
+  const serviceDropdown = document.getElementById("service");
+
+  if (serviceDropdown) {
+    const requestedService = new URLSearchParams(window.location.search).get("service");
+
+    if (requestedService) {
+      Array.from(serviceDropdown.options).forEach(function (option) {
+        // Option text looks like "Gel manicure (R320)" so compare only the name part
+        if (option.text.split(" (")[0].toLowerCase() === requestedService.toLowerCase()) {
+          serviceDropdown.value = option.value;
+        }
+      });
+    }
+  }
 
 });
