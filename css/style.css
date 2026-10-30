@@ -453,6 +453,25 @@ footer {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+/* ---------- Interactive service-area map ---------- */
+.service-map {
+  position: relative;
+  z-index: 0; /* keeps the map's layers underneath the sticky header */
+  width: 100%;
+  height: 400px;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.service-map[hidden] { display: none; }
+
+.map-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
 
 /* ============================================================
    RESPONSIVE BREAKPOINTS (must stay at the bottom of the file)
@@ -503,4 +522,5 @@ footer {
   .booking-cta-section,
   .studio-invite-section,
   .direct-contact-section { padding: 1.2rem; }
+  .service-map { height: 300px; }
 }
