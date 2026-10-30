@@ -329,6 +329,12 @@ footer {
 .form-group textarea[aria-invalid="true"] {
   border-color: #b3261e;
 }
+/* ---------- Button while a form is sending ---------- */
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
 
 /* ============================================================
    RESPONSIVE BREAKPOINTS
