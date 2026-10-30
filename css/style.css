@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 /* ============================================================
    PRUDIEY NAILS — MAIN STYLESHEET
    Colour scheme: blush pink, rose gold, cream/white, charcoal
@@ -261,28 +262,6 @@ nav {
   box-shadow: var(--shadow-soft);
 }
 
-.map-container {
-  margin-bottom: 2rem;
-}
-
-.location-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.map-container {
-  flex: 1;
-  min-width: 280px;
-}
-
-.map-container iframe {
-  width: 100%;
-  height: 350px;
-  border-radius: var(--radius);
-  margin-top: 0.5rem;
-}
-
 .map-label { font-weight: 600; color: var(--rose-gold); }
 
 /* ---------- Forms (enquiry + contact quick form) ---------- */
@@ -343,72 +322,6 @@ footer {
    Desktop-first: styles above apply to desktop by default.
    ============================================================ */
 
-/* ---- Tablet (max-width: 768px) ---- */
-@media (max-width: 768px) {
-  .container { padding: 0 1rem; }
-
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-
-  .image-gallery,
-  .three-image-gallery,
-  .mission-vision,
-  .contact-details {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .service-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
-
-  .price { margin-left: 0; }
-}
-
-/* ---- Mobile (max-width: 480px) ---- */
-@media (max-width: 480px) {
-  #menu-btn { display: block; }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    gap: 0;
-    background-color: var(--white);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 1rem 1.5rem;
-    box-shadow: var(--shadow-soft);
-  }
-
-  .nav-links.open { display: flex; }
-
-  .nav-links a { padding: 0.7rem 0; border-bottom: 1px solid #f0f0f0; }
-
-  h1 { font-size: 1.7rem; }
-  h2 { font-size: 1.3rem; }
-
-  .image-gallery,
-  .three-image-gallery,
-  .mission-vision,
-  .contact-details {
-    grid-template-columns: 1fr;
-  }
-
-  .enquiry-form,
-  .quick-form {
-    padding: 1.2rem;
-  }
-
-  .booking-cta-section,
-  .studio-invite-section,
-  .direct-contact-section {
-    padding: 1.5rem;
-  }
-}
-
 /* force the image gallery grid to all neatly */
 .image-gallery {
   display: flex;
@@ -444,3 +357,6 @@ footer {
 .booking-response p:last-child {
   margin-bottom: 0;
 }
+
+.site-title { font-family: var(--font-heading); font-weight: 700; font-size: 1.4rem; text-align: center; padding-top: 0.8rem; margin-bottom: 0; }
+.info-block h2 { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.4em; }
