@@ -365,7 +365,7 @@ const body = encodeURIComponent(
       }
     });
   }
-  
+
   // ============================================================
   // SERVICES SEARCH, FILTER AND SORT — services.html
   // The controls are built with JavaScript (DOM manipulation) and
@@ -478,6 +478,89 @@ const body = encodeURIComponent(
     sortSelect.addEventListener("change", updateServices);
 
     updateServices(); // run once so the count shows on page load
+  }
+    // ============================================================
+  // SERVICE DETAILS MODAL — services.html
+  // Clicking a service card opens a popup built from the card's own
+  // text (name, description, price) with a button to book it.
+  // ============================================================
+  const serviceCards = document.querySelectorAll(".service-item");
+
+  if (serviceCards.length > 0) {
+    // Build the popup once
+    const modal = document.createElement("div");
+    modal.className = "service-modal";
+    modal.hidden = true;
+    modal.innerHTML =
+      '<div class="service-modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">' +
+        '<button class="lightbox-close" aria-label="Close service details">\u00D7</button>' +
+        '<h3>Service details</h3>' +
+        '<h2 id="modal-title"></h2>' +
+        '<p class="modal-description"></p>' +
+        '<p class="modal-price"></p>' +
+        '<a class="cta-link modal-book">Book this service</a>' +
+      '</div>';
+    document.body.appendChild(modal);
+
+    const modalClose = modal.querySelector(".lightbox-close");
+    const modalTitle = modal.querySelector("#modal-title");
+    const modalDescription = modal.querySelector(".modal-description");
+    const modalPrice = modal.querySelector(".modal-price");
+    const modalBook = modal.querySelector(".modal-book");
+    let lastFocused = null;
+
+    function openModal(card) {
+      const name = card.querySelector("h4").textContent;
+      modalTitle.textContent = name;
+      modalDescription.textContent = card.querySelector(".service-info p").textContent;
+      modalPrice.textContent = card.querySelector(".price").textContent;
+      modalBook.href = "enquiry.html?service=" + encodeURIComponent(name);
+
+      lastFocused = card;
+      modal.hidden = false;
+      document.body.style.overflow = "hidden"; // stop the page scrolling behind
+      modalClose.focus();
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      document.body.style.overflow = "";
+      if (lastFocused) { lastFocused.focus(); } // return to the card that was clicked
+    }
+
+    // Make every card clickable, and usable with the keyboard
+    serviceCards.forEach(function (card) {
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("role", "button");
+      card.addEventListener("click", function () { openModal(card); });
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openModal(card);
+        }
+      });
+    });
+
+    // Close: × button, click on the dark background, or Escape
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) { closeModal(); }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) { closeModal(); }
+    });
+
+    // Keep Tab inside the popup while it is open
+    modal.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab") { return; }
+      if (e.shiftKey && document.activeElement === modalClose) {
+        e.preventDefault();
+        modalBook.focus();
+      } else if (!e.shiftKey && document.activeElement === modalBook) {
+        e.preventDefault();
+        modalClose.focus();
+      }
+    });
   }
 
 });
