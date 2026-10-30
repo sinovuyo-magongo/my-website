@@ -316,6 +316,19 @@ footer {
   padding: 1.5rem;
   margin-top: 3rem;
 }
+/* ---------- Form validation messages ---------- */
+.field-error {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #b3261e;
+}
+
+.form-group input[aria-invalid="true"],
+.form-group select[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: #b3261e;
+}
 
 /* ============================================================
    RESPONSIVE BREAKPOINTS
