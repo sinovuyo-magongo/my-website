@@ -141,4 +141,61 @@ const body = encodeURIComponent(
     });
   }
 
+  // ============================================================
+  // GALLERY LIGHTBOX — index.html and about.html
+  // Clicking a gallery image opens a larger copy in an overlay.
+  // The overlay is built with DOM manipulation, so no extra HTML
+  // is needed in the pages.
+  // ============================================================
+  const galleryImages = document.querySelectorAll(
+    ".image-gallery img, .three-image-gallery img"
+  );
+
+  if (galleryImages.length > 0) {
+    // Build the overlay once
+    const lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-label", "Enlarged image");
+    lightbox.hidden = true;
+
+    const lightboxImg = document.createElement("img");
+
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "lightbox-close";
+    closeBtn.textContent = "\u00D7"; // the × symbol
+    closeBtn.setAttribute("aria-label", "Close enlarged image");
+
+    lightbox.appendChild(closeBtn);
+    lightbox.appendChild(lightboxImg);
+    document.body.appendChild(lightbox);
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+    }
+
+    // Open: copy the clicked image into the overlay
+    galleryImages.forEach(function (img) {
+      img.addEventListener("click", function () {
+        lightboxImg.src = img.currentSrc || img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.hidden = false;
+      });
+    });
+
+    // Close: click the dark background or the × button
+    lightbox.addEventListener("click", function (e) {
+      if (e.target !== lightboxImg) {
+        closeLightbox();
+      }
+    });
+
+    // Close: press Escape
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  }
+
 });
