@@ -361,6 +361,56 @@ footer {
 .site-title { font-family: var(--font-heading); font-weight: 700; font-size: 1.4rem; text-align: center; padding-top: 0.8rem; margin-bottom: 0; }
 .info-block h2 { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.4em; }
 
+/* ---------- Gallery lightbox ---------- */
+.image-gallery img,
+.three-image-gallery img { cursor: zoom-in; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: rgba(51, 48, 46, 0.9);
+  z-index: 200;
+  animation: lightbox-fade 0.25s ease;
+}
+
+/* display:flex above would otherwise override the hidden attribute */
+.lightbox[hidden] { display: none; }
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--white);
+  background-color: var(--rose-gold);
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus { background-color: var(--charcoal); }
+
+@keyframes lightbox-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 /* ============================================================
    RESPONSIVE BREAKPOINTS (must stay at the bottom of the file)
    ============================================================ */
