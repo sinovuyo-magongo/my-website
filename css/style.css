@@ -335,6 +335,30 @@ footer {
   cursor: not-allowed;
   transform: none;
 }
+/* ---------- Services search, filter and sort ---------- */
+.service-controls {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+  background-color: var(--white);
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1rem;
+}
+
+.service-controls .form-group { margin-bottom: 0; }
+
+.service-status {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+/* display:flex on .service-item would otherwise override the hidden attribute */
+.service-item[hidden],
+.service-category[hidden] { display: none; }
 
 /* ============================================================
    RESPONSIVE BREAKPOINTS
@@ -456,6 +480,7 @@ footer {
   .mission-vision { grid-template-columns: 1fr; }
 
   iframe { width: 100%; height: 300px; }
+  .service-controls { grid-template-columns: 1fr; }
 }
 
 /* Mobile: 480px and below */
