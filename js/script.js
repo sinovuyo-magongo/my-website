@@ -365,5 +365,119 @@ const body = encodeURIComponent(
       }
     });
   }
+  
+  // ============================================================
+  // SERVICES SEARCH, FILTER AND SORT — services.html
+  // The controls are built with JavaScript (DOM manipulation) and
+  // work on the service cards that are already on the page.
+  // ============================================================
+  const servicesWrapper = document.querySelector(".services-wrapper");
+  const serviceCategories = document.querySelectorAll(".service-category");
+
+  if (servicesWrapper && serviceCategories.length > 0) {
+
+    // Remember each card's original position so "Default order" can restore it
+    document.querySelectorAll(".service-item").forEach(function (item, index) {
+      item.dataset.order = index;
+    });
+
+    // ----- Build the controls -----
+    const controls = document.createElement("div");
+    controls.className = "service-controls";
+    controls.innerHTML =
+      '<div class="form-group">' +
+        '<label for="service-search">Search services</label>' +
+        '<input type="search" id="service-search" placeholder="e.g. gel, pedicure, acrylic">' +
+      '</div>' +
+      '<div class="form-group">' +
+        '<label for="service-filter">Category</label>' +
+        '<select id="service-filter"><option value="all">All categories</option></select>' +
+      '</div>' +
+      '<div class="form-group">' +
+        '<label for="service-sort">Sort by</label>' +
+        '<select id="service-sort">' +
+          '<option value="default">Default order</option>' +
+          '<option value="low">Price: low to high</option>' +
+          '<option value="high">Price: high to low</option>' +
+        '</select>' +
+      '</div>';
+
+    const searchInput = controls.querySelector("#service-search");
+    const filterSelect = controls.querySelector("#service-filter");
+    const sortSelect = controls.querySelector("#service-sort");
+
+    // Fill the category dropdown from the headings already on the page
+    serviceCategories.forEach(function (category, index) {
+      const option = document.createElement("option");
+      option.value = index;
+      option.textContent = category.querySelector("h2").textContent;
+      filterSelect.appendChild(option);
+    });
+
+    // A line that tells the user how many results are showing
+    const status = document.createElement("p");
+    status.className = "service-status";
+    status.setAttribute("aria-live", "polite");
+
+    // Put the controls above the first category
+    servicesWrapper.insertBefore(controls, serviceCategories[0]);
+    servicesWrapper.insertBefore(status, serviceCategories[0]);
+
+    // ----- Helper: turn "R320" or "from R150" into the number 320 / 150 -----
+    function getPrice(item) {
+      const text = item.querySelector(".price").textContent;
+      const number = parseInt(text.replace(/[^0-9]/g, ""), 10);
+      return isNaN(number) ? 0 : number;
+    }
+
+    // ----- Apply search, filter and sort -----
+    function updateServices() {
+      const query = searchInput.value.trim().toLowerCase();
+      const chosenCategory = filterSelect.value;
+      const sortMode = sortSelect.value;
+      let visibleCount = 0;
+
+      serviceCategories.forEach(function (category, index) {
+        const items = Array.from(category.querySelectorAll(".service-item"));
+
+        // Sort the cards inside this category
+        items.sort(function (a, b) {
+          if (sortMode === "low") { return getPrice(a) - getPrice(b); }
+          if (sortMode === "high") { return getPrice(b) - getPrice(a); }
+          return a.dataset.order - b.dataset.order;
+        });
+        items.forEach(function (item) { category.appendChild(item); });
+
+        // Search: show only cards whose text contains the search words
+        let matchesInCategory = 0;
+        items.forEach(function (item) {
+          const matches = item.textContent.toLowerCase().includes(query);
+          item.hidden = !matches;
+          if (matches) { matchesInCategory++; }
+        });
+
+        // Filter: hide the whole category if it was not chosen or has no matches
+        const categoryAllowed =
+          chosenCategory === "all" || chosenCategory === String(index);
+        category.hidden = !categoryAllowed || matchesInCategory === 0;
+
+        if (!category.hidden) { visibleCount += matchesInCategory; }
+      });
+
+      // Tell the user what is showing
+      if (visibleCount === 0) {
+        status.textContent = "No services match your search. Try a different word or category.";
+      } else {
+        status.textContent =
+          "Showing " + visibleCount + (visibleCount === 1 ? " service." : " services.");
+      }
+    }
+
+    searchInput.addEventListener("input", updateServices);
+    filterSelect.addEventListener("change", updateServices);
+    sortSelect.addEventListener("change", updateServices);
+
+    updateServices(); // run once so the count shows on page load
+  }
 
 });
