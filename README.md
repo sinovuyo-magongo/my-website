@@ -146,6 +146,7 @@ This submission delivers the fundamental layout structure, containing:
 ![Mobile layout](./images/mobile-view.png)
 
 ## References
+- Formspree (2026) *Formspree: form backend for static websites*. Available at: https://formspree.io/ (Accessed: 31 October 2026).
 - LeadsuiteNow (2026) *Nail salon lead generation & client retention USA: 2026 guide*. Available at: https://leadsuitenow.com/blog/nail-salon-lead-generation-usa-2026 (Accessed: 12 September 2026).
 - MioSalon (2025) *Top benefits of online booking for salons to boost revenue*. Available at: https://blog.miosalon.com/surprising-benefits-of-online-booking-for-salons-when-done-right/ (Accessed: 5 August 2026).
 - Pagecloud (2024) *Top website goals to grow online and how to achieve them*. Available at: https://www.pagecloud.com/blog/website-goals-and-how-to-achieve-them (Accessed: 5 August 2026).
