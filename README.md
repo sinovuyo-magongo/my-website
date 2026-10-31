@@ -77,9 +77,15 @@ This submission delivers the fundamental layout structure, containing:
 - Removed a duplicate, non-responsive `.image-gallery` rule that was overriding the responsive grid layout on smaller screens.
 - Added a "Type of message" dropdown to the contact form; the selected type is included in the email subject and body.
 
+### Part 2 Feedback Corrections
+- **Feedback received:** "Tablet view media query is required." (Responsive Design: Media Queries/Breakpoints for Tablet and Mobile, 5/10.)
+- **Cause:** The responsive rules described in the Part 2 README were not actually present in css/style.css, so the layout did not adapt on tablet or mobile and the mobile menu button was never shown.
+- **Fix:** Added a 768px (tablet) and a 480px (mobile) `@media` breakpoint at the bottom of css/style.css. At 768px the Menu button appears, the navigation collapses into a toggled list, the 3-column and 2-column grids reduce, and the map iframes become fluid. At 480px the grids become a single column, headings shrink, and service rows and banner padding are tightened.
+- **Related fix:** Removed the `<a>` link wrapped around the Menu button on index.html, which reloaded the home page instead of toggling the menu.
+
 ### Part 3 Additions
 - Implemented dynamic form processing on enquiry.html: validates input, then displays 
-  a response showing the selected service's price and the requested date.
+  a response sAdd Part 2 feedback corrections to README changeloghowing the selected service's price and the requested date.
 - Implemented email compilation on contact.html: validates input, then builds a mailto: 
   link addressed to hello@prudieynails.co.za with the submitted details pre-filled, 
   allowing the user to review and send the email themselves.
