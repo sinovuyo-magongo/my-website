@@ -134,6 +134,25 @@ This submission delivers the fundamental layout structure, containing:
 ### Contact
 ![Contact page wireframe](./images/YOUR-CONTACT-WIREFRAME-FILE.png)
 
+## Wireframes
+
+Low-fidelity desktop wireframes for each page, showing the layout of every section. These were missing from the Part 1 submission and were added as a correction.
+
+### Home
+![Home page wireframe](./images/wireframes/wireframe-home.png)
+
+### About
+![About page wireframe](./images/wireframes/wireframe-about.png)
+
+### Services
+![Services page wireframe](./images/wireframes/wireframe-services.png)
+
+### Enquiry
+![Enquiry page wireframe](./images/wireframes/wireframe-enquiry.png)
+
+### Contact
+![Contact page wireframe](./images/wireframes/wireframe-contact.png)
+
 ## Responsive Design Evidence
 
 ## Desktop View
