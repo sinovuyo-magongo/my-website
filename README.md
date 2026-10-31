@@ -99,6 +99,24 @@ This submission delivers the fundamental layout structure, containing:
 - Added robots.txt (allows all pages, links to the sitemap) and sitemap.xml (lists all five pages with priorities and last-modified dates) in the repository root. Note: because the site is hosted in a /my-website/ sub-folder on GitHub Pages, search engines only read robots.txt from the domain root, so the sitemap is the more effective of the two.
 - Added `loading="lazy"` to the three images on about.html so they load only as the visitor scrolls, improving page speed.
 
+## Part 3 Features: Enhancing Functionality and SEO
+
+| Feature | Page(s) | Files |
+|---|---|---|
+| Gallery lightbox (click to enlarge, Esc to close) | index.html, about.html | js/script.js, css/style.css |
+| JavaScript form validation with inline error messages | enquiry.html, contact.html | js/script.js, css/style.css |
+| Enquiry response showing price and availability | enquiry.html | js/script.js |
+| AJAX enquiry submission (Formspree, no page reload) | enquiry.html | js/script.js |
+| Email compiled from the contact form (mailto) | contact.html | js/script.js |
+| Services search, category filter and price sort | services.html | js/script.js, css/style.css |
+| Service details modal with "Book this service" link | services.html, enquiry.html | js/script.js, css/style.css |
+| Interactive service-area map (Leaflet + OpenStreetMap) | contact.html | pages/contact.html, js/script.js, css/style.css |
+| SEO: titles, meta descriptions, meta keywords, alt text, image names, robots.txt, sitemap.xml | all pages | all HTML files, images/, robots.txt, sitemap.xml |
+
+**Third-party tools used:** Leaflet (maps), OpenStreetMap (map tiles) and Formspree (receives enquiry submissions on the static GitHub Pages host).
+
+**Deployment:** The site is deployed on GitHub Pages: https://sinovuyo-magongo.github.io/my-website/
+
 ## Responsive Design Evidence
 
 ## Desktop View
