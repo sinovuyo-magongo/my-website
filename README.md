@@ -117,6 +117,23 @@ This submission delivers the fundamental layout structure, containing:
 
 **Deployment:** The site is deployed on GitHub Pages: https://sinovuyo-magongo.github.io/my-website/
 
+## Wireframes
+
+### Home
+![Home page wireframe](./images/YOUR-HOME-WIREFRAME-FILE.png)
+
+### About
+![About page wireframe](./images/YOUR-ABOUT-WIREFRAME-FILE.png)
+
+### Services
+![Services page wireframe](./images/YOUR-SERVICES-WIREFRAME-FILE.png)
+
+### Enquiry
+![Enquiry page wireframe](./images/YOUR-ENQUIRY-WIREFRAME-FILE.png)
+
+### Contact
+![Contact page wireframe](./images/YOUR-CONTACT-WIREFRAME-FILE.png)
+
 ## Responsive Design Evidence
 
 ## Desktop View
