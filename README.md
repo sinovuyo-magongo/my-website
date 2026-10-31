@@ -73,7 +73,6 @@ This submission delivers the fundamental layout structure, containing:
 - Implemented Flexbox/Grid layouts for nav, galleries, service items, and contact details.
 - Added hover/focus/active states on buttons, nav links, and service items.
 - Added responsive breakpoints at 768px (tablet) and 480px (mobile), with mobile nav toggle.
-- Added wireframes for all five site pages (home, about, services, enquiry, contact) — previously missing from Part 1 submission.
 - Removed a duplicate, non-responsive `.image-gallery` rule that was overriding the responsive grid layout on smaller screens.
 - Added a "Type of message" dropdown to the contact form; the selected type is included in the email subject and body.
 
@@ -84,8 +83,8 @@ This submission delivers the fundamental layout structure, containing:
 - **Related fix:** Removed the `<a>` link wrapped around the Menu button on index.html, which reloaded the home page instead of toggling the menu.
 
 ### Part 3 Additions
-- Implemented dynamic form processing on enquiry.html: validates input, then displays 
-  a response sAdd Part 2 feedback corrections to README changeloghowing the selected service's price and the requested date.
+- Implemented dynamic form processing on enquiry.html: validates input, then displays
+  a response showing the selected service's price and the requested date.
 - Implemented email compilation on contact.html: validates input, then builds a mailto: 
   link addressed to hello@prudieynails.co.za with the submitted details pre-filled, 
   allowing the user to review and send the email themselves.
@@ -99,6 +98,8 @@ This submission delivers the fundamental layout structure, containing:
 - Added robots.txt (allows all pages, links to the sitemap) and sitemap.xml (lists all five pages with priorities and last-modified dates) in the repository root. Note: because the site is hosted in a /my-website/ sub-folder on GitHub Pages, search engines only read robots.txt from the domain root, so the sitemap is the more effective of the two.
 - Added `loading="lazy"` to the three images on about.html so they load only as the visitor scrolls, improving page speed.
 - Added desktop wireframes for all five pages (images/wireframes/) and displayed them in the Wireframes section of this README. The wireframes show the section layout of each page, including the Part 3 additions (services search controls and the interactive map). They were not provided in Part 1, which was marked down for it.
+- Applied on-page SEO to all five pages. Each page now has a unique keyword-led title tag (under 60 characters), a unique meta description (under 160 characters) and a short meta keywords list based on terms clients would search for (service names, "Bloemfontein", and the Fichardt Park and Universitas areas). The home page title was previously " prudiey nails" with no capitals and a leading space.
+- Restored the script.js link on contact.html, which had been lost when the Leaflet script was added, and added the missing service details modal styles to style.css.
 
 ## Part 3 Features: Enhancing Functionality and SEO
 
@@ -117,23 +118,6 @@ This submission delivers the fundamental layout structure, containing:
 **Third-party tools used:** Leaflet (maps), OpenStreetMap (map tiles) and Formspree (receives enquiry submissions on the static GitHub Pages host).
 
 **Deployment:** The site is deployed on GitHub Pages: https://sinovuyo-magongo.github.io/my-website/
-
-## Wireframes
-
-### Home
-![Home page wireframe](./images/YOUR-HOME-WIREFRAME-FILE.png)
-
-### About
-![About page wireframe](./images/YOUR-ABOUT-WIREFRAME-FILE.png)
-
-### Services
-![Services page wireframe](./images/YOUR-SERVICES-WIREFRAME-FILE.png)
-
-### Enquiry
-![Enquiry page wireframe](./images/YOUR-ENQUIRY-WIREFRAME-FILE.png)
-
-### Contact
-![Contact page wireframe](./images/YOUR-CONTACT-WIREFRAME-FILE.png)
 
 ## Wireframes
 
