@@ -473,6 +473,52 @@ footer {
   margin: 1rem 0;
 }
 
+/* ---------- Service details modal ---------- */
+.service-item { cursor: pointer; }
+
+.service-item:focus-visible {
+  outline: 2px solid var(--rose-gold);
+  outline-offset: 2px;
+}
+
+.service-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: rgba(51, 48, 46, 0.6);
+  z-index: 200;
+  animation: lightbox-fade 0.25s ease;
+}
+
+/* display:flex would otherwise override the hidden attribute */
+.service-modal[hidden] { display: none; }
+
+.service-modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  padding: 2rem;
+  background-color: var(--cream);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  animation: modal-rise 0.3s ease;
+}
+
+.modal-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--rose-gold);
+}
+
+@keyframes modal-rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ============================================================
    RESPONSIVE BREAKPOINTS (must stay at the bottom of the file)
    ============================================================ */
