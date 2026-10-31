@@ -98,6 +98,7 @@ This submission delivers the fundamental layout structure, containing:
 - Added an interactive map to contact.html using the Leaflet library with OpenStreetMap tiles (contact.html, script.js, style.css). Two circles mark the Fichardt Park and Universitas service areas, using general areas rather than exact points to protect the studio's privacy. Clicking a circle opens a popup, and buttons fly the map to each area or back to both. One-finger dragging is disabled on touch devices so the page remains scrollable, the map is hidden if Leaflet fails to load, and the existing Google Maps embeds remain as a fallback.
 - Added robots.txt (allows all pages, links to the sitemap) and sitemap.xml (lists all five pages with priorities and last-modified dates) in the repository root. Note: because the site is hosted in a /my-website/ sub-folder on GitHub Pages, search engines only read robots.txt from the domain root, so the sitemap is the more effective of the two.
 - Added `loading="lazy"` to the three images on about.html so they load only as the visitor scrolls, improving page speed.
+- Added desktop wireframes for all five pages (images/wireframes/) and displayed them in the Wireframes section of this README. The wireframes show the section layout of each page, including the Part 3 additions (services search controls and the interactive map). They were not provided in Part 1, which was marked down for it.
 
 ## Part 3 Features: Enhancing Functionality and SEO
 
