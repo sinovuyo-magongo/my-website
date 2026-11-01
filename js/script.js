@@ -366,6 +366,8 @@ const body = encodeURIComponent(
     });
   }
 
+  //===DYNAMIC SERVICES LISTING
+
   // ============================================================
   // SERVICES SEARCH, FILTER AND SORT — services.html
   // The controls are built with JavaScript (DOM manipulation) and
@@ -420,8 +422,8 @@ const body = encodeURIComponent(
     status.setAttribute("aria-live", "polite");
 
     // Put the controls above the first category
-    servicesWrapper.insertBefore(controls, serviceCategories[0]);
-    servicesWrapper.insertBefore(status, serviceCategories[0]);
+    serviceCategories[0].parentNode.insertBefore(controls, serviceCategories[0]);
+    serviceCategories[0].parentNode.insertBefore(status, serviceCategories[0]);
 
     // ----- Helper: turn "R320" or "from R150" into the number 320 / 150 -----
     function getPrice(item) {
