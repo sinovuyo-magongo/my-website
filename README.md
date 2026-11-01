@@ -8,7 +8,7 @@
 ---
 
 ## Project Overview
-This project is a multi-page business website designed for **Prudie Nails**, a home-based nail salon operating out of Bloemfontein. The purpose of the website is to establish an online presence, showcase nail work, share professional history, and give clients a general idea of service coverage areas.
+This project is a multi-page business website designed for **Prudiey Nails**, a home-based nail salon operating out of Bloemfontein. The purpose of the website is to establish an online presence, showcase nail work, share professional history, and give clients a general idea of service coverage areas.
 
 ---
 
