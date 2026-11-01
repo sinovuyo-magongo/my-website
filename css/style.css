@@ -19,7 +19,7 @@ button { font: inherit; cursor: pointer; border: none; }
 /* ---------- Base / Root Variables ---------- */
 :root {
   --blush-pink: #f7cad0;
-  --rose-gold: #b76e79;
+  --rose-gold: #a35a66;
   --cream: #fdf6f0;
   --charcoal: #33302e;
   --white: #ffffff;
@@ -50,7 +50,7 @@ h1, h2, h3, h4 {
 
 h1 { font-size: 2.4rem; }
 h2 { font-size: 1.8rem; }
-h3 { font-size: 1.3rem; color: var(--rose-gold); text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.95rem; }
+h3 { color: var(--rose-gold); text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.95rem; }
 h4 { font-size: 1.1rem; }
 
 p { margin-bottom: 1em; }
@@ -517,6 +517,17 @@ footer {
 @keyframes modal-rise {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Google Maps embeds ---------- */
+.map-container { margin-bottom: 1.5rem; }
+
+.map-container .map-label { display: block; margin-bottom: 0.4rem; }
+
+.map-container iframe {
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius);
 }
 
 /* ============================================================
