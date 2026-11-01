@@ -51,6 +51,7 @@ This submission delivers the fundamental layout structure, containing:
 - **Initial Setup:** Generated foundational empty workspace with initial default `README.md`.
 - **Core Update:** Populated folder architectures (`css`, `js`, `images`, `pages`) with active layout documents.
 - **Content Expansion:** Drafted internal semantic sections for `about.html` and configured map integrations on `contact.html`.
+ - Improved image alt text on index.html and about.html to describe each image and include the brand and location where relevant, and corrected the spelling of "stiletto".
 
 ---
 
@@ -113,7 +114,7 @@ This submission delivers the fundamental layout structure, containing:
 | Services search, category filter and price sort | services.html | js/script.js, css/style.css |
 | Service details modal with "Book this service" link | services.html, enquiry.html | js/script.js, css/style.css |
 | Interactive service-area map (Leaflet + OpenStreetMap) | contact.html | pages/contact.html, js/script.js, css/style.css |
-| SEO: titles, meta descriptions, meta keywords, alt text, image names, robots.txt, sitemap.xml | all pages | all HTML files, images/, robots.txt, sitemap.xml |
+| SEO: titles, meta descriptions, meta keywords, alt text, robots.txt, sitemap.xml | all pages | all HTML files, robots.txt, sitemap.xml |
 
 **Third-party tools used:** Leaflet (maps), OpenStreetMap (map tiles) and Formspree (receives enquiry submissions on the static GitHub Pages host).
 
