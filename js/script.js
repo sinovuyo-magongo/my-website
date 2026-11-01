@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ============================================================
   const bookingForm = document.getElementById("booking-form");
   const bookingResponse = document.getElementById("booking-response");
-  // Where the enquiry is sent. Replace YOUR_FORM_ID with your Formspree form ID.
+  // Where the enquiry is sent (Formspree endpoint).
   const ENQUIRY_ENDPOINT = "https://formspree.io/f/xoeenkgk";
 
   if (bookingForm) {
@@ -479,7 +479,8 @@ const body = encodeURIComponent(
 
     updateServices(); // run once so the count shows on page load
   }
-    // ============================================================
+    
+  // ============================================================
   // SERVICE DETAILS MODAL — services.html
   // Clicking a service card opens a popup built from the card's own
   // text (name, description, price) with a button to book it.
@@ -578,7 +579,7 @@ const body = encodeURIComponent(
     }
   }
 
-    // ============================================================
+  // ============================================================
   // INTERACTIVE SERVICE-AREA MAP — contact.html
   // Uses the Leaflet library with OpenStreetMap tiles. Circles show
   // the general service areas only (no exact address, for privacy).
