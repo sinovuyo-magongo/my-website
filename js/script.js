@@ -20,8 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.getElementById("nav-links");
 
   if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", function () {
-      navLinks.classList.toggle("open");
+        menuBtn.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
   }
   
@@ -34,9 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ---------- Mark current page's nav link as active ----------
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    let currentPath = window.location.pathname;
+  if (currentPath.endsWith("/")) { currentPath += "index.html"; }
   document.querySelectorAll(".nav-links a").forEach(function (link) {
-    if (link.getAttribute("href") === currentPage) {
+    if (new URL(link.href).pathname === currentPath) {
       link.setAttribute("aria-current", "page");
     }
   });
