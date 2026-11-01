@@ -102,6 +102,22 @@ This submission delivers the fundamental layout structure, containing:
 - Applied on-page SEO to all five pages. Each page now has a unique keyword-led title tag (under 60 characters), a unique meta description (under 160 characters) and a short meta keywords list based on terms clients would search for (service names, "Bloemfontein", and the Fichardt Park and Universitas areas). The home page title was previously " prudiey nails" with no capitals and a leading space.
 - Restored the script.js link on contact.html, which had been lost when the Leaflet script was added, and added the missing service details modal styles to style.css.
 
+### Part 3 Corrections
+- **Descriptive image file names:** Renamed all six site images from names like `images (2).jpg` and `image5.jpg` to descriptive, space-free names such as `pink-patterned-long-acrylic-nails.jpg` and `long-stiletto-nails-star-pattern.jpg`, and updated every reference in index.html and about.html. This improves image SEO and removes `%20` in the file paths.
+- **Home gallery fixed:** Removed the `srcset` and `<picture>` code on index.html. It pointed to different photos rather than different sizes of the same photo, so visitors saw different images depending on screen width. The gallery now uses one image per slot, with `loading="lazy"` plus `width` and `height` attributes to improve page speed.
+- **About page images:** Added `width` and `height` attributes and updated the alt text and file names on the three portraits.
+- **Dynamic services listing:** The service cards on services.html are now built with JavaScript from a services data list in script.js (DOM manipulation) instead of being hard-coded in the HTML. The existing search, category filter, sort and details modal work on the generated cards.
+- **Form `action` attributes:** Added `action="https://formspree.io/f/xoeenkgk"` and `method="POST"` to the enquiry form, and a `mailto:` action to the contact form, plus `name` attributes on all fields, as required by the brief. JavaScript still validates and sends the enquiry in the background.
+- **Enquiry form options:** Added the three missing services (simple accent nail, hand-painted full set art, gel or acrylic removal) to the service dropdown so "Book this service" can pre-select every service. Removed the duplicate, misspelled "Anyone avaliable" technician option.
+- **Date minimum fixed:** The earliest bookable date now uses the visitor's local date instead of UTC, which allowed "yesterday" between 00:00 and 02:00 in South Africa.
+- **Security:** Added `rel="noopener noreferrer"` to every external link that opens in a new tab (about.html and contact.html). The enquiry is sent to Formspree over HTTPS, and all user input is validated in JavaScript before it is sent.
+- **Local SEO:** Added `NailSalon` structured data (JSON-LD) to index.html with the business name, Bloemfontein, the two service areas, phone, email and opening hours. No street address is included, to protect the studio's privacy.
+- **Heading structure:** Each page now has exactly one `<h1>`. The home page header title was changed from an `<h1>` to a paragraph, and h1 headings were added to services.html, enquiry.html and contact.html.
+- **Placeholder text and footers:** Removed the leftover placeholder paragraph on about.html. Standardised the footer to "© 2026 Prudiey Nails" on all pages. Reworded the enquiry form notice, which wrongly said the form only shows a summary when it now sends the request.
+- **Navigation:** The active-page highlight now works on every page including Home, because links are compared by full path. The Menu button now has `aria-label`, `aria-expanded` and `aria-controls`, and `aria-expanded` updates when the menu opens and closes. Removed the duplicate "Book Now" menu link so all pages have the same five links.
+- **Accessibility and CSS:** Darkened the rose gold colour from `#b76e79` to `#a35a66` so white button text has enough contrast. Removed a duplicate `font-size` on `h3`. Made the Google Maps embeds on contact.html fluid so they no longer overflow on phones.
+- **Link list markup:** The social links on about.html are now wrapped in `<li>` elements inside the `<ul>`.
+
 ## Part 3 Features: Enhancing Functionality and SEO
 
 | Feature | Page(s) | Files |
@@ -115,6 +131,8 @@ This submission delivers the fundamental layout structure, containing:
 | Service details modal with "Book this service" link | services.html, enquiry.html | js/script.js, css/style.css |
 | Interactive service-area map (Leaflet + OpenStreetMap) | contact.html | pages/contact.html, js/script.js, css/style.css |
 | SEO: titles, meta descriptions, meta keywords, alt text, robots.txt, sitemap.xml | all pages | all HTML files, robots.txt, sitemap.xml |
+| Dynamic services listing built with JavaScript | services.html | js/script.js, pages/services.html |
+| Local SEO structured data (JSON-LD) | index.html | index.html |
 
 **Third-party tools used:** Leaflet (maps), OpenStreetMap (map tiles) and Formspree (receives enquiry submissions on the static GitHub Pages host).
 
@@ -162,4 +180,4 @@ Low-fidelity desktop wireframes for each page, showing the layout of every secti
 - Zenoti (2026) *2026 nail salon trends every business owner should know*. Available at: https://www.zenoti.com/thecheckin/2026-nail-salon-trends (Accessed: 12 September 2026).
 - Leaflet (2023) *Leaflet: an open-source JavaScript library for mobile-friendly interactive maps*. Available at: https://leafletjs.com/ (Accessed: 31 October 2026).
 - OpenStreetMap contributors (2026) *OpenStreetMap copyright and licence*. Available at: https://www.openstreetmap.org/copyright (Accessed: 31 October 2026).
-
+- Schema.org (2026) *NailSalon*. Available at: https://schema.org/NailSalon (Accessed: 1 November 2026).
