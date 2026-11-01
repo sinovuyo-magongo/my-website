@@ -366,7 +366,65 @@ const body = encodeURIComponent(
     });
   }
 
-  //===DYNAMIC SERVICES LISTING
+  // ============================================================
+  // DYNAMIC SERVICES LISTING — services.html
+  // The service cards are built from this list with JavaScript
+  // (DOM manipulation) instead of being written in the HTML.
+  // ============================================================
+  const servicesList = document.getElementById("services-list");
+
+  if (servicesList) {
+    const servicesData = [
+      {
+        category: "Manicures",
+        items: [
+          { name: "Classic manicure", description: "Shape, cuticle care, hand massage, polish.", price: "R220" },
+          { name: "Gel manicure", description: "Classic manicure finished with long-wear gel polish.", price: "R320" },
+          { name: "Acrylic full set", description: "Sculpted acrylic extensions, shaped and polished.", price: "R480" },
+          { name: "Acrylic infill", description: "Maintenance for existing acrylic sets, every 2-3 weeks.", price: "R280" }
+        ]
+      },
+      {
+        category: "Pedicures",
+        items: [
+          { name: "Classic pedicure", description: "Soak, shape, cuticle care, polish.", price: "R280" },
+          { name: "Spa pedicure", description: "Classic pedicure plus exfoliation and extended massage.", price: "R380" },
+          { name: "Gel pedicure", description: "Spa pedicure finished with long-wear gel polish.", price: "R420" }
+        ]
+      },
+      {
+        category: "Nail art & add-ons",
+        items: [
+          { name: "Simple accent nail", description: "One design detail on up to two nails.", price: "from R40" },
+          { name: "Hand-painted full set art", description: "Custom design across all ten nails \u2014 browse the gallery for inspiration.", price: "from R150" },
+          { name: "Gel or acrylic removal", description: "Soak-off and nail bed condition, priced separately if not paired with a new set.", price: "R120" }
+        ]
+      }
+    ];
+
+    servicesData.forEach(function (group) {
+      const category = document.createElement("div");
+      category.className = "service-category";
+
+      const heading = document.createElement("h2");
+      heading.textContent = group.category;
+      category.appendChild(heading);
+
+      group.items.forEach(function (service) {
+        const item = document.createElement("div");
+        item.className = "service-item";
+        item.innerHTML =
+          '<div class="service-info"><h4></h4><p></p></div>' +
+          '<span class="price"></span>';
+        item.querySelector("h4").textContent = service.name;
+        item.querySelector("p").textContent = service.description;
+        item.querySelector(".price").textContent = service.price;
+        category.appendChild(item);
+      });
+
+      servicesList.appendChild(category);
+    });
+  }
 
   // ============================================================
   // SERVICES SEARCH, FILTER AND SORT — services.html
