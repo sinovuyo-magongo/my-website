@@ -5,7 +5,6 @@
 - **Student Number:** ST10481104
 - **Course:** WED Development/ WEDE5020
 - **Live Link:**https://sinovuyo-magongo.github.io/my-website/
-
 ---
 
 ## Project Overview
