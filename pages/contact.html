@@ -86,20 +86,20 @@
             <!-- Quick Message Form -->
             <div class="quick-message-section">
                 <h2>Send a quick message</h2>
-                <form class="quick-form">
+                <form class="quick-form" action="mailto:hello@prudieynails.co.za" method="POST" enctype="text/plain"></form>
                     <div class="form-group">
                         <label for="msg-name">Your name</label>
-                        <input type="text" id="msg-name" required>
+                        <input type="text" id="msg-name" name="name" required>
                     </div>
 
                     <div class="form-group">
                         <label for="msg-email">Email address</label>
-                        <input type="email" id="msg-email" required>
+                        <input type="email" id="msg-email" name="email" required>
                     </div>
 
                     <div class="form-group">
     <label for="msg-type">Type of message</label>
-    <select id="msg-type" required>
+    <select id="msg-type" name="type" required></select>
         <option value="" disabled selected>Select a message type</option>
         <option value="General question">General question</option>
         <option value="Change or cancel an appointment">Change or cancel an appointment</option>
@@ -111,7 +111,7 @@
 
                     <div class="form-group">
                         <label for="msg-text">Message</label>
-                        <textarea id="msg-text" rows="5" placeholder="Ask a question, or let us know what you're after" required></textarea>
+                        <textarea id="msg-text" name="message" rows="5" placeholder="Ask a question, or let us know what you're after" required></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">Send message</button>
