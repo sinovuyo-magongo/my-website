@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // ---------- Prevent past dates on enquiry form ----------
   const dateInput = document.getElementById("date");
   if (dateInput) {
-    dateInput.min = new Date().toISOString().split("T")[0];
+    const today = new Date();
+    const pad = function (n) { return String(n).padStart(2, "0"); };
+    dateInput.min = today.getFullYear() + "-" + pad(today.getMonth() + 1) + "-" + pad(today.getDate());
   }
 
   // ---------- Mark current page's nav link as active ----------
