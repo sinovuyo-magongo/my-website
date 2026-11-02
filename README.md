@@ -133,7 +133,7 @@ This submission delivers the fundamental layout structure, containing:
 | Dynamic services listing built with JavaScript | services.html | js/script.js, pages/services.html |
 | Local SEO structured data (JSON-LD) | index.html | index.html |
 
-**Third-party tools used:** Leaflet (maps), OpenStreetMap (map tiles) and Formspree (receives enquiry submissions on the static GitHub Pages host).
+**Third-party tools used:** Leaflet (Leaflet, 2023) for the interactive map, OpenStreetMap (OpenStreetMap contributors, 2026) for the map tiles and Formspree (Formspree, 2026) to receive enquiry submissions on the static GitHub Pages host.
 
 **Deployment:** The site is deployed on GitHub Pages: https://sinovuyo-magongo.github.io/my-website/
 
